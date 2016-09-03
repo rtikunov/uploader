@@ -11,10 +11,11 @@
 
 Install using `docker` ...
 
-Install Docker daemon: 
+    Install Docker daemon:
     for Ubuntu apt-get install lxc-docker 
     for other distributions installation doc here: https://docs.docker.com/engine/installation/
-Install app:
+
+    Install app:
     git clone git@github.com:rtikunov/uploader.git
     cd uploader
     docker build .
@@ -23,9 +24,10 @@ Install app:
     docker run -d --name uploader uploader
 
 # Test API:
+    Using test script:
     docker exec -ti uploader /app/uploader/test.sh
 
-or by attaching to container and run tests manually:
+    Or by attaching to container and run tests manually:
     docker exec -ti uploader /bin/bash
     /app/uploader/test.sh
     
