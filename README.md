@@ -11,12 +11,12 @@
 
 Install using `docker` ...
 
-    Install Docker daemon:
-    for Ubuntu apt-get install lxc-docker 
+    Install Docker daemon ...
+    for Ubuntu: apt-get install lxc-docker 
     for other distributions installation doc here: https://docs.docker.com/engine/installation/
 
     Install app:
-    git clone git@github.com:rtikunov/uploader.git
+    git clone https://github.com/rtikunov/uploader.git
     cd uploader
     docker build .
     at the end of build process, you will get built image id. e.g. "successfully built 4ff382384f3e". 
