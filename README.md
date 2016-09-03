@@ -1,20 +1,34 @@
-# [App provides api for upload, download and delete files][docs]
+# App provides api for upload, download and delete files
 
 
 # Requirements
 
 * Python (3.5)
 * Django (1.8)
+* Django Rest Framework
 
 # Installation
 
 Install using `docker` ...
 
+Install Docker daemon: 
+    for Ubuntu apt-get install lxc-docker 
+    for other distributions installation doc here: https://docs.docker.com/engine/installation/
+Install app:
+    git clone git@github.com:rtikunov/uploader.git
+    cd uploader
     docker build .
-    docker tag <img_id> uploader
+    at the end of build process, you will get built image id. e.g. "successfully built 4ff382384f3e". 
+    docker tag <img-id-from-the-end-of-docker-build> uploader
     docker run -d --name uploader uploader
+
+# Test API:
     docker exec -ti uploader /app/uploader/test.sh
 
+or by attaching to container and run tests manually:
+    docker exec -ti uploader /bin/bash
+    /app/uploader/test.sh
+    
 You can also interact with the API using command line tools such as [`curl`](http://curl.haxx.se/). For example, to list the users endpoint:
 
     Upload file:
