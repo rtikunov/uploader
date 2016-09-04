@@ -13,17 +13,9 @@ class FileUploadViewSet(ModelViewSet):
     parser_classes = (MultiPartParser, FormParser,)
 
     def perform_create(self, serializer):
-        serializer.save(datafile=self.request.data.get('datafile'), name=self.request.data.get('datafile'))
+        serializer.save(datafile=self.request.data.get('datafile'),
+                        name=self.request.data.get('datafile'))
 
     def perform_destroy(self, instance):
         os.remove(instance.datafile.path)
         instance.delete()
-
-
-#class FileListView(ModelViewSet):
-#    queryset = FileUpload.objects.all()
-#    serializer_class = FileUploadSerializer
-#
-#    def perform_destroy(self, instance):
-#        os.remove(instance.datafile.path)
-#        instance.delete()

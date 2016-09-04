@@ -12,8 +12,9 @@
 Install using `docker` ...
 
     Install Docker daemon ...
-    for Ubuntu: apt-get install lxc-docker 
+    for Ubuntu: apt-get install docker.io
     for other distributions installation doc here: https://docs.docker.com/engine/installation/
+    Ensure that docker daemon is started or start it: service docker start
 
     Install app:
     git clone https://github.com/rtikunov/uploader.git
