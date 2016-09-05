@@ -13,9 +13,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='FileUpload',
             fields=[
-                ('name', models.CharField(primary_key=True, max_length=255, serialize=False)),
+                ('name', models.CharField(serialize=False, primary_key=True, max_length=255)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('datafile', models.FileField(upload_to='')),
+                ('md5sum', models.CharField(max_length=40)),
             ],
         ),
     ]

@@ -103,5 +103,5 @@ USE_TZ = True
 
 STATIC_ROOT = '/app/uploader/static'
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/app/uploader/storage'
-MEDIA_URL= '/storage/'
+MEDIA_ROOT = '/app/uploader/storage/'
+MEDIA_URL = '/storage/'
