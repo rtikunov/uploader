@@ -26,9 +26,13 @@ Install using `docker` ...
     Using test script:
     sudo docker exec -ti uploader /app/uploader/test.sh
 
+    Using unittests:
+    sudo docker exec -ti uploader /app/uploader/manage.py test --noinput
+
     Or by attaching to container and run tests manually:
     sudo docker exec -ti uploader /bin/bash
     /app/uploader/test.sh
+    /app/uploader/manage.py test --noinput
     
 You can also interact with the API using command line tools such as [`curl`](http://curl.haxx.se/). For example, to list the users endpoint:
 
@@ -42,4 +46,4 @@ You can also interact with the API using command line tools such as [`curl`](htt
     $ curl -s http://127.0.0.1/storage/testfile
 
     Delete file:
-    $ curl -s -L -X DELETE http://127.0.0.1/api/testfile
+    $ curl -s -L -X DELETE http://127.0.0.1/api/testfile/
