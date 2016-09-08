@@ -11,6 +11,7 @@ curl -s -X POST \
 echo -e "\n\n"
 
 echo "Is file exists in storage"
+echo "ls -l storage/"
 ls -l storage/
 echo -e "\n"
 
@@ -27,4 +28,5 @@ curl -s -L -X DELETE http://127.0.0.1/api/testfile
 echo -e "\n"
 
 echo "Check if file deleted"
+echo "ls -l storage/"
 ls -l storage/

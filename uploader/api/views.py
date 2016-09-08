@@ -1,6 +1,5 @@
 import os
 import hashlib
-from django.shortcuts import render
 
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.viewsets import ModelViewSet

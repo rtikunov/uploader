@@ -13,9 +13,7 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf import settings
-from django.conf.urls.static import static
-from django.conf.urls import url, include, patterns, url
+from django.conf.urls import url, include
 from rest_framework import routers
 from api import views
 
@@ -26,4 +24,4 @@ router.register(r'api', views.FileUploadViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^', include(router.urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
