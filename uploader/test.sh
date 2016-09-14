@@ -1,6 +1,4 @@
-#!/bin/bash
-
-#set -x
+#!/usr/bin/env bash
 
 date > /app/uploader/testfile
 

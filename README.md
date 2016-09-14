@@ -11,7 +11,7 @@
 
 Install using `docker` ...
 
-    Install Docker daemon ...
+    Install Docker daemon:
     for Ubuntu: sudo apt-get install docker.io
     for other distributions installation doc here: https://docs.docker.com/engine/installation/
     Ensure that docker daemon is started or start it: sudo service docker start
@@ -21,6 +21,24 @@ Install using `docker` ...
     cd uploader
     sudo docker build -t uploader .
     sudo docker run -d --name uploader uploader
+
+Install using `NixOS` ...
+
+    Clone repo:
+    mkdir /app
+    git clone https://github.com/rtikunov/uploader.git /app
+
+    Configure nginx:
+    Open file `/etc/nixos/configuration.nix` and add into imports section `/app/nginx.nix`
+    nixos-rebuild switch
+    systemctl status nginx
+    Service should be in `active (running)` state
+
+    cd /app
+    nix-build
+    export LINK=$(readlink result)
+    nix-shell -p $LINK
+    /app/uploader/run.sh
 
 # Test API:
     Using test script:
