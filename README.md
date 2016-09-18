@@ -34,10 +34,6 @@ Install using `NixOS` ...
     systemctl status nginx
     Service should be in `active (running)` state
 
-    cd /app
-    nix-build
-    export LINK=$(readlink result)
-    nix-shell -p $LINK
     /app/uploader/run.sh
 
 # Test API:
