@@ -29,12 +29,11 @@ Install using `NixOS` ...
     git clone https://github.com/rtikunov/uploader.git /app
 
     Configure nginx:
-    Open file `/etc/nixos/configuration.nix` and add into imports section `/app/nginx.nix`
+    Open file `/etc/nixos/configuration.nix` and add into imports section `/app/uploader.nix`
     nixos-rebuild switch
     systemctl status nginx
-    Service should be in `active (running)` state
-
-    /app/uploader/run.sh
+    systemctl status uploader
+    Services should be in `active (running)` state
 
 # Test API:
     Using test script:
